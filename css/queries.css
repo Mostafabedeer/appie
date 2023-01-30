@@ -1,0 +1,346 @@
+/* rem and em do not depend on HTML FONT SIZE
+in media queries istead 1rem = 1em = 16px
+ */
+
+/*********************/
+/* Below 1344px (smaller desktops) */
+/*********************/
+
+@media (max-width: 84em) {
+  html {
+    font-size: 56.25%;
+  }
+  .hero {
+    max-width: 120rem;
+  }
+  .container {
+    max-width: 120rem;
+  }
+  .heading-primary {
+    font-size: 6.2rem;
+  }
+  .how-text {
+    font-size: 1.2rem;
+  }
+}
+/*********************/
+/* Below 1100px (Landscape Taplates) */
+/*********************/
+@media (max-width: 69em) {
+  html {
+    font-size: 50%;
+  }
+  .grid {
+    column-gap: 2.4rem;
+    row-gap: 2.4rem;
+  }
+  .heading-secondary,
+  .heading-secondary-light {
+    font-size: 3.6rem;
+  }
+  .heading-tertairy,
+  .heading-tertairy-light {
+    font-size: 2rem;
+  }
+  .header {
+    padding: 3.2rem;
+  }
+  .hero {
+    gap: 4.8rem;
+  }
+}
+
+/*********************/
+/* Below 944px (Taplates) */
+/*********************/
+
+@media (max-width: 59em) {
+  html {
+    font-size: 43.75%;
+  }
+
+  /* mobile navigation */
+
+  .btn-mobile-nav {
+    display: block;
+    z-index: 1000;
+  }
+  .main-nav {
+    position: absolute;
+    background-color: rgba(255, 255, 255, 0.9);
+    -webkit-backdrop-filter: blur(5px);
+    backdrop-filter: blur(5px);
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    transform: translateX(100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.5s ease-in;
+    /*hidden nav*/
+    /*Allow not ransitions at all*/
+    /*display: none;
+    */
+    -webkit-transition: all 0.5s;
+    -moz-transition: all 0.5s ease-in;
+    -ms-transition: all 0.5s ease-in;
+    -o-transition: all 0.5s ease-in;
+    /*1)Hide it visually*/
+    opacity: 0;
+    /*2)Make it unaccessable by mouse and keyboard*/
+    pointer-events: none;
+    /*3)Hide it form screenreaders*/
+    visibility: hidden;
+    -webkit-transform: translateX(100%);
+    -moz-transform: translateX(100%);
+    -ms-transform: translateX(100%);
+    -o-transform: translateX(100%);
+    -webkit-transition: all 0.5s ease-in;
+  }
+  .nav-open .main-nav {
+    opacity: 1;
+    pointer-events: auto;
+    visibility: visible;
+    transform: translate(0);
+    -webkit-transform: translate(0);
+    -moz-transform: translate(0);
+    -ms-transform: translate(0);
+    -o-transform: translate(0);
+    z-index: 999;
+  }
+  .nav-open .icon-mobile-nav[name="close-outline"] {
+    display: block;
+  }
+  .nav-open .icon-mobile-nav[name="menu-outline"] {
+    display: none;
+  }
+
+  .nav {
+    flex-direction: column;
+    gap: 4.8rem;
+  }
+  .nav-item-link:link,
+  .nav-item-link:visited {
+    font-size: 3rem;
+  }
+}
+/*********************/
+/* Below 728px (Smaller Taplates) */
+/*********************/
+@media (max-width: 45.5em) {
+  .hero {
+    grid-template-columns: 1fr;
+  }
+  .hero-img {
+    width: 103%;
+    padding-left: 20rem;
+  }
+  .heading-primary {
+    margin: 0 auto;
+    padding: 0 9rem;
+  }
+  .heading-primary span {
+    letter-spacing: -2px;
+  }
+  .hero-text {
+    padding: 2.4rem 0 3.2rem 0;
+    text-align: center;
+  }
+  .testimonials-text {
+    text-align: center;
+  }
+
+  .serv-btn {
+    margin-bottom: 2.4rem;
+  }
+
+  .hero-box {
+    justify-content: center;
+  }
+  .start-form {
+    margin: 0 auto 3.2rem auto;
+  }
+  .grid--2-cols {
+    grid-template-columns: 1fr;
+  }
+  .grid--3-cols {
+    grid-template-columns: 1fr;
+    justify-items: center;
+  }
+  .serv-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .serv-item .formal-text {
+    text-align: center;
+  }
+
+  .pricing-item {
+    padding: 3.2rem 3.2rem;
+    width: 75%;
+  }
+
+  .pricing-item:nth-child(2)::before {
+    padding: 0.8rem 3rem;
+  }
+  .marketing-img-box {
+    display: none;
+  }
+  .features-img-box {
+    display: grid;
+    grid-template-columns: 1fr;
+    justify-items: center;
+  }
+  .features-img {
+    width: 60%;
+  }
+  .grid--2-cols-how {
+    grid-template-columns: 1fr;
+    row-gap: 2.4rem !important;
+  }
+  .video-silde-box {
+    display: contents;
+  }
+  .how-img {
+    width: 90%;
+    justify-self: center;
+  }
+  .how-play-icon {
+    left: 45%;
+  }
+  .padding-left {
+    grid-row: 2;
+  }
+  .how-box-of-arr {
+    justify-self: center;
+  }
+  .how-img-box {
+    margin-left: 3.7rem;
+  }
+
+  .add-footer {
+    grid-template-columns: 1fr;
+    justify-items: center;
+    row-gap: 3.2rem;
+  }
+  .copyright {
+    margin-left: 1rem;
+  }
+  .grid-footer {
+    grid-template-columns: 1fr;
+    justify-items: center;
+    row-gap: 6.2rem;
+    column-gap: 3.2rem;
+  }
+  .service-heading {
+    flex-direction: column;
+  }
+  .service-heading .heading-secondary {
+    text-align: center;
+  }
+  .serv-btn {
+    margin-left: 0;
+  }
+  .footer-read {
+    justify-content: center;
+  }
+  .social-links {
+    justify-content: center;
+  }
+  .logo-footer {
+    padding-left: 3rem;
+  }
+  .heading-footer {
+    font-size: 2rem;
+    text-align: center;
+  }
+  .get-in-touch {
+    align-items: center;
+  }
+  .footer-nav {
+    align-items: center !important;
+  }
+  .footer .flex-col {
+    align-items: center;
+  }
+  .testimonials {
+    max-width: 85rem !important;
+    grid-template-columns: 1fr;
+    padding: 3rem !important;
+    /* column-gap: 2rem; */
+  }
+  .testimonials-user-box {
+    justify-self: normal;
+  }
+  .section-testimonials {
+    padding: 9.6rem 4rem 4.8rem 4rem;
+  }
+  .arr-test {
+    display: none;
+  }
+  .marketing {
+    max-height: fit-content;
+  }
+
+  .testimonials-box {
+    justify-content: center;
+  }
+  .marketing-box {
+    flex-direction: column;
+    gap: 1.6rem;
+  }
+  .service-heading .subheading {
+    text-align: center;
+  }
+}
+/*********************/
+/* Below 560px (Phones) */
+/*********************/
+@media (max-width: 35em) {
+  .seciton-hero {
+    padding-top: 9.6rem;
+  }
+  .btn-flat:link,
+  .btn-flat:visited {
+    font-size: 1.6rem;
+    padding: 0.8rem 1.6rem;
+    text-align: center;
+  }
+  .btn:link,
+  .btn:visited {
+    font-size: 1.6rem;
+    padding: 0.8rem 1.6rem;
+    text-align: center;
+  }
+  .serv-btn {
+    text-align: center;
+  }
+  .feature-items {
+    grid-template-columns: repeat(1, 1fr);
+    row-gap: 2rem;
+    justify-items: center;
+  }
+  .btn-nav {
+    display: none !important;
+  }
+
+  .btn-mobile-nav {
+    margin-left: auto;
+  }
+}
+
+/* Font sizes (px)
+10 / 12 / 14 / 16 / 18 / 20 / 24 / 30 /
+ 36 / 44 / 52 / 62 / 74 / 86 / 98 */
+
+/* 
+ -Spacing system (px)  
+2 / 4 / 8 / 12 / 16 / 24 / 32 / 48 / 64
+ / 80 / 96 / 128 */
+
+/*********************/
+/* FIXING SAFARI FLEXBOX GAP */
+/*********************/
